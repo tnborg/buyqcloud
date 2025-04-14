@@ -5,12 +5,7 @@ builds:
   - id: buyqcloud
     binary: buyqcloud
     env:
-      - >-
-        {{- if or (eq .Os "ios") (eq .Os "android") }}
-          CGO_ENABLED=1
-        {{- else }}
-          CGO_ENABLED=0
-        {{- end }}
+      - CGO_ENABLED=0
     goos:
       - linux
       - darwin
@@ -20,8 +15,6 @@ builds:
       - netbsd
       - solaris
       - aix
-      - ios
-      - android
       - js
       - wasip1
     goarch:
