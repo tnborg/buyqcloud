@@ -36,4 +36,4 @@ jobs:
         with:
           name: backend-${{ matrix.goarch }}
           path:
-            - buyqcloud-${{ matrix.goarch }}
+            buyqcloud-${{ matrix.goarch }}
