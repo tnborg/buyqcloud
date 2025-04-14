@@ -19,7 +19,6 @@ builds:
       - openbsd
       - netbsd
       - solaris
-      - plan9
       - aix
       - ios
       - android
@@ -55,7 +54,7 @@ upx:
 
 archives:
   - id: buyqcloud
-    builds:
+    ids:
       - buyqcloud
     formats: ["zip"]
     wrap_in_directory: false
