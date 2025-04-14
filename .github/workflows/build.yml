@@ -28,7 +28,7 @@ jobs:
           CGO_ENABLED: 0
           GOOS: linux
           GOARCH: ${{ matrix.goarch }}
-        run: go build -o buyqcloud-${{ matrix.goarch } -ldflags '-s -w -extldflags "-static"'
+        run: go build -o buyqcloud-${{ matrix.goarch }} -ldflags '-s -w -extldflags "-static"'
       - name: Compress ${{ matrix.goarch }}
         run: upx --best --lzma buyqcloud-${{ matrix.goarch }}
       - name: Upload artifact
