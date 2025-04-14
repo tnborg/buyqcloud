@@ -5,7 +5,12 @@ builds:
   - id: buyqcloud
     binary: buyqcloud
     env:
-      - CGO_ENABLED=0
+      - >-
+        {{- if or (eq .Os "ios") (eq .Os "android") }}
+          CGO_ENABLED=1
+        {{- else }}
+          CGO_ENABLED=0
+        {{- end }}
     goos:
       - linux
       - darwin
@@ -13,13 +18,24 @@ builds:
       - freebsd
       - openbsd
       - netbsd
+      - solaris
+      - plan9
+      - aix
       - ios
       - android
       - js
       - wasip1
     goarch:
+      - 386
       - amd64
+      - arm
       - arm64
+      - loong64
+      - mips64
+      - ppc64
+      - riscv64
+      - s390x
+      - mips
       - wasm
     ldflags:
       - -s -w --extldflags "-static"
