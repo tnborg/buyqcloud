@@ -1,0 +1,48 @@
+version: 2
+project_name: buyqcloud
+
+builds:
+  - id: buyqcloud
+    binary: buyqcloud
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+      - freebsd
+      - openbsd
+      - netbsd
+      - ios
+      - android
+      - js
+      - wasip1
+    goarch:
+      - amd64
+      - arm64
+      - wasm
+    ldflags:
+      - -s -w --extldflags "-static"
+
+upx:
+  - enabled: true
+    # Filter by build ID.
+    ids:
+      - buyqcloud
+    # Compress argument.
+    # Valid options are from '1' (faster) to '9' (better), and 'best'.
+    compress: best
+    # Whether to try LZMA (slower).
+    lzma: true
+    # Whether to try all methods and filters (slow).
+    brute: false
+
+archives:
+  - id: buyqcloud
+    builds:
+      - buyqcloud
+    formats: ["zip"]
+    wrap_in_directory: false
+    strip_binary_directory: true
+    files:
+      - LICENSE
