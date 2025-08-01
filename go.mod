@@ -1,4 +1,4 @@
-module github.com/tnb-labs/buyqcloud
+module github.com/tnborg/buyqcloud
 
 go 1.24
 
