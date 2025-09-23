@@ -5,8 +5,8 @@ go 1.24.0
 require (
 	github.com/pterm/pterm v0.12.81
 	github.com/spf13/cast v1.10.0
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.1.27
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.1.27
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.1.32
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.1.32
 	golang.org/x/time v0.13.0
 )
 
