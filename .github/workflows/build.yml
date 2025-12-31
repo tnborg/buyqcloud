@@ -32,7 +32,7 @@ jobs:
       - name: Compress ${{ matrix.goarch }}
         run: upx --best --lzma buyqcloud-${{ matrix.goarch }}
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: backend-${{ matrix.goarch }}
           path:
